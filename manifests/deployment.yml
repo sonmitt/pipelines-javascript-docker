@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: sonmittpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sonmittpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: sonmittpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: sonmittpipelinesjavascriptdocker 
+          image: azconregistry11.azurecr.io/sonmittpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
